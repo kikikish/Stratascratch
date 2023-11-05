@@ -24,6 +24,8 @@ Title:
 
 --Solution
 
-select worker_title as best_paid_title from title join  worker on worker_id = worker_ref_id
-where salary = (select max(salary) from worker)
-order by worker_title
+SELECT worker_title AS best_paid_title
+FROM title
+JOIN worker ON worker_id = worker_ref_id
+WHERE salary = (SELECT MAX(salary) FROM worker)
+ORDER BY worker_title;
